@@ -75,7 +75,7 @@ def test_read_before_card_ready():
     test_value = vxco.read()
 
     assert test_value == (None, None)
-    vxco.card.read_chunk.assert_not_called
+    vxco.card.read_chunk.assert_not_called()
     
 
 def test_read_bad_data_on_card():
