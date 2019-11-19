@@ -86,7 +86,7 @@ def test_read_bad_data_on_card():
 
     # force a read from card, as it is usually cached
     vxco._read_from_card()
-    vxco.card_ready=True
+    vxco.card_ready = True
     test_value = vxco.read()
 
     # since the reading is still returning the bad bytes, this should look like an empty card
