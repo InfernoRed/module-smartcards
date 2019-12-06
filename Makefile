@@ -27,3 +27,6 @@ typecheck:
 
 run:
 	FLASK_APP=smartcards.core python3 -m pipenv run python -m flask run --port 3001
+
+describe:
+	python3 -m pipenv run python3 printInsertedCardATR.py
