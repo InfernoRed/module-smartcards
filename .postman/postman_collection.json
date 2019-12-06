@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "a4e3b4f6-3cfa-43cb-8135-fe7ca5fb179c",
+		"name": "VotingWorks CARD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Card",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scheme}}://{{host}}:{{port}}/card/read",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"card",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Card Long Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scheme}}://{{host}}:{{port}}/card/read_long",
+					"protocol": "{{scheme}}",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"card",
+						"read_long"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
