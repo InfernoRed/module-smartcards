@@ -86,7 +86,9 @@ class Card:
         if len(long_value_compressed) < len(long_value):
             long_value = long_value_compressed
 
-        if len(long_value) > self.MAX_LENGTH:
+        content_length = len(long_value)
+        if content_length > self.MAX_LENGTH:
+            print(f"write_short_and_long_values lenth {content_length} exceeds max {self.MAX_LENGTH}")
             return
 
         # by default, we write protect the cards with short-and-long values
@@ -113,6 +115,7 @@ class Card:
 
         # the right card by prefix?
         if bytes(data[:4]) != b'VX.' + bytes(VERSION):
+            print("did not find VX card")
             return None
 
         self.write_enabled = ([data[4]] == WRITABLE)
