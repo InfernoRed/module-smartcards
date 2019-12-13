@@ -53,6 +53,11 @@ def card_write_and_protect():
     rv = CardInterface.write(content, write_protect=True)
     return jsonify({"success": rv})
 
+@app.route('/card/write_short', methods=["POST"])
+def card_write_short():
+    short_value = request.form['short_value']
+    rv = CardInterface.write(short_value.encode('utf-8'))
+    return jsonify({"success": rv})
 
 @app.route('/card/write_short_and_long', methods=["POST"])
 def card_write_short_and_long():
@@ -71,6 +76,11 @@ def card_read_long_b64():
     else:
         return jsonify({"longValue": None})
 
+@app.route('/card/write_short_b64', methods=["POST"])
+def card_write_short_b64():
+    short_value = request.form["short_value"]
+    rv = CardInterface.write(base64.b64decode(short_value))
+    return jsonify({"success": rv})
 
 @app.route('/card/write_long_b64', methods=["POST"])
 def card_write_long_b64():
